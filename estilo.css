@@ -1,0 +1,196 @@
+/* estilo.css - Estilo unificado para o site "Os Três Dias de Trevas" */
+:root {
+  /* Paleta Cinza/Azul */
+  --bg: #f0f2f5;           /* Fundo: Cinza claro */
+  --fg: #1c1e21;           /* Texto principal: Quase preto */
+  --muted: #606770;        /* Texto secundário: Cinza escuro */
+  --card: #ffffff;         /* Fundo das seções: Branco */
+  --accent: #1d69db;       /* Cor de destaque (links): Azul */
+  --border: #dce1e7;       /* Cor das bordas: Cinza suave */
+  --heading-blue: #0d47a1; /* Cor dos títulos: Azul escuro */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(240, 242, 245, 0.98) 70%, transparent);
+  backdrop-filter: saturate(1.2) blur(6px);
+  -webkit-backdrop-filter: saturate(1.2) blur(6px);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--heading-blue); /* --- ALTERADO --- */
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* --- Estilos para o Menu de Navegação --- */
+header nav {
+  margin-top: 1rem;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+header nav li {
+  margin: 0 15px;
+}
+
+header nav a {
+  font-weight: bold;
+}
+/* --- Fim dos Estilos do Menu --- */
+
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+  color: var(--heading-blue); /* --- ALTERADO --- */
+  margin: 1.5em 0 1em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--heading-blue); /* --- ALTERADO --- */
+  margin: 1.4em 0 0.8em;
+}
+
+p {
+  margin: 1em 0;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+ul, ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+.doc {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+footer {
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Força o parágrafo dentro do rodapé a ser centralizado */
+footer p {
+  text-align: center;
+}
+
+.back-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: none;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-top.show {
+  display: flex;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .wrap {
+    padding: 12px;
+  }
+  section {
+    padding: 16px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.98rem;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
